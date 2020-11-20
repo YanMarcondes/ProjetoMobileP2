@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "111225735085",
+    "firebase_url": "https://peak-service-293922.firebaseio.com",
+    "project_id": "peak-service-293922",
+    "storage_bucket": "peak-service-293922.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111225735085:android:d92cad3acd2a2abdb80324",
+        "android_client_info": {
+          "package_name": "com.example.projeto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111225735085-6cbc48bcnordqqb5ki445v9bua0igb14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1izjyPZC8rx26LC7Q0HdVEwhuW-HNIqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111225735085-6cbc48bcnordqqb5ki445v9bua0igb14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
