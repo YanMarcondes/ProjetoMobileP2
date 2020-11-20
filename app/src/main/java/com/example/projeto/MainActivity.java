@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Uri uri) {
                     Picasso.with(MainActivity.this).load(uri).into(imFotoDownload);
+                    Toast.makeText(MainActivity.this, "Sucesso!!", Toast.LENGTH_SHORT).show();
 
                 }
             }).addOnFailureListener(new OnFailureListener() {
