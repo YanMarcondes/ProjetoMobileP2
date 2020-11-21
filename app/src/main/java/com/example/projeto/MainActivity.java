@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     StorageReference mstoregeReference;
     Uri caminhoImagem;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference databaseReference = firebaseDatabase.getReference();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference("imagens");
     private List<Cliente> clienteList = new ArrayList<>();
     private ArrayAdapter<Cliente> clienteArrayAdapter;
     private String nomeArquivo = null;
@@ -93,23 +93,19 @@ public class MainActivity extends AppCompatActivity {
         indice = Integer.valueOf(edIndice.getText().toString());
         pesquisa("");
         StorageReference storageReference = mstoregeReference;
-        if (clienteList.isEmpty() == false){
-            storageReference.child(clienteList.get(indice).getEndereco()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    Picasso.with(MainActivity.this).load(uri).into(imFotoDownload);
-                    Toast.makeText(MainActivity.this, "Sucesso!!", Toast.LENGTH_SHORT).show();
-
-                }
-            }).addOnFailureListener(new OnFailureListener() {
+        if (clienteList.isEmpty() == false) {
+            storageReference.child(clienteList.get(indice).getEndereco()).getDownloadUrl()
+                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Picasso.with(MainActivity.this).load(uri).into(imFotoDownload);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-
                 }
             });
         }
-
-
     }
 
     private void pesquisa(String nome) {
@@ -120,23 +116,21 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 clienteList.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    if (dataSnapshot.exists()) {
-                        Cliente cliente = dataSnapshot.getValue(Cliente.class);
+                    if (dataSnapshot1.exists()) {
+                        Cliente cliente = dataSnapshot1.getValue(Cliente.class);
                         clienteList.add(cliente);
                     }
-
                 }
-                clienteArrayAdapter = new ArrayAdapter<Cliente>(MainActivity.this,android.R.layout.simple_list_item_1, clienteList);
-
-
+                clienteArrayAdapter = new ArrayAdapter<Cliente>(MainActivity.this,
+                        android.R.layout.simple_list_item_1, clienteList);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
+
 
     private void uploadFoto() {
         StorageReference ref = mstoregeReference.child(nomeArquivo);

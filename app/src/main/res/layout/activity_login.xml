@@ -48,7 +48,7 @@
         app:showOutline="false" />
 
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/btnSenha"
+        android:id="@+id/btnCancela"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
