@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -15,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.example.projeto.Cliente.Cliente;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,7 +36,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btSelecionarFoto, btUploadFoto, btDownloadFoto;
+    private BootstrapButton btSelecionarFoto, btUploadFoto, btDownloadFoto;
     private ImageView imFotoUpload, imFotoDownload;
     StorageReference mstoregeReference;
     Uri caminhoImagem;
@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-
         btUploadFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,9 +167,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void carregaWigets() {
-        btDownloadFoto = (Button) findViewById(R.id.btFotoDownload);
-        btSelecionarFoto = (Button) findViewById(R.id.btBuscaFoto);
-        btUploadFoto = (Button) findViewById(R.id.btUploadFoto);
+        btDownloadFoto = (BootstrapButton) findViewById(R.id.btFotoDownload);
+        btSelecionarFoto = (BootstrapButton) findViewById(R.id.btBuscaFoto);
+        btUploadFoto = (BootstrapButton) findViewById(R.id.btUploadFoto);
         imFotoDownload = (ImageView) findViewById(R.id.imgFotoDownload);
         imFotoUpload = (ImageView) findViewById(R.id.imgFotoDispositivo);
         edIndice = (EditText) findViewById(R.id.edtIndice);

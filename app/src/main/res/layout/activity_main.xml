@@ -1,49 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btBuscaFoto"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Busca Foto" />
-
-    <ImageView
-        android:id="@+id/imgFotoDispositivo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <Button
-        android:id="@+id/btUploadFoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Upload Foto" />
-
-    <ImageView
-        android:id="@+id/imgFotoDownload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <Button
-        android:id="@+id/btFotoDownload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Download Foto" />
-
-    <EditText
-        android:id="@+id/edtIndice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
 
-</LinearLayout>
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/btBuscaFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Busca Foto"
+            app:bootstrapBrand="primary"
+            app:roundedCorners="true" />
+
+        <ImageView
+            android:id="@+id/imgFotoDispositivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/btUploadFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Upload Foto"
+            app:bootstrapBrand="regular"
+            app:roundedCorners="true" />
+
+        <ImageView
+            android:id="@+id/imgFotoDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/btFotoDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Download Foto"
+            app:bootstrapBrand="danger"
+            app:roundedCorners="true" />
+
+        <EditText
+            android:id="@+id/edtIndice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+    </LinearLayout>
+
+</ScrollView>
