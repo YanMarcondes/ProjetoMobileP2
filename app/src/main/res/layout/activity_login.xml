@@ -48,11 +48,11 @@
         app:showOutline="false" />
 
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/btnCancela"
+        android:id="@+id/btnCadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
-        android:text="Cancelar"
+        android:text="Cadastro"
         app:bootstrapSize="lg"
         app:buttonMode="regular"
         app:roundedCorners="true"

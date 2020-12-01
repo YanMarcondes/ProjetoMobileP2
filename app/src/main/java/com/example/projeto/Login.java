@@ -31,12 +31,28 @@ public class Login extends AppCompatActivity {
         edtEmail = (BootstrapEditText) findViewById(R.id.edtEmail);
         edtSenha = (BootstrapEditText) findViewById(R.id.edtSenha);
         BootstrapButton btnLogin = findViewById(R.id.btnLogin);
-        BootstrapButton btnCancela = findViewById(R.id.btnCancela);
+        BootstrapButton btnCadastro = findViewById(R.id.btnCadastro);
 
+        cadastro(btnCadastro);
+        login(btnLogin);
+    }
+
+    private void login(BootstrapButton btnLogin) {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 fazerLogin(edtEmail.getText().toString(), edtSenha.getText().toString());
+
+            }
+        });
+    }
+
+    private void cadastro(BootstrapButton btnCadastro) {
+        btnCadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cadastro = new Intent(Login.this, Escolha.class);
+                startActivity(cadastro);
 
             }
         });
